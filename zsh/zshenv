@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+# Terminal -----------------------------
+  export TERM=xterm-256color
+
+# XDG ----------------------------------
+  export XDG_CONFIG_HOME=$HOME/.config
+  export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+  export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
+# Editor -------------------------------
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+
+# Pager --------------------------------
+  export PAGER=less
+
+# Grep ---------------------------------
+  export GREP_OPTIONS='--color=always'
+
+# ZSH ----------------------------------
+  export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+  export HISTCONTROL=ignoreboth
+  export HISTSIZE=10000                   # Maximum events for internal history
+  export SAVEHIST=10000                   # Maximum events in history file
+
+# PATH ---------------------------------
+  export PATH="/usr/local/bin:usr/local/sbin:$PATH"   # Homebrew
+
+# Others -------------------------------
+  export LANG=en_US.UTF-8
+  export LC_CTYPE=en_US.UTF-8
+  export LESSHISTFILE=-

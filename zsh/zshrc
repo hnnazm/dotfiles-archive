@@ -1,0 +1,76 @@
+#
+#  ███████╗███████╗██╗  ██╗
+#  ╚══███╔╝██╔════╝██║  ██║
+#    ███╔╝ ███████╗███████║
+#   ███╔╝  ╚════██║██╔══██║
+#  ███████╗███████║██║  ██║
+#  ╚══════╝╚══════╝╚═╝  ╚═╝
+#                          config-file
+
+# ======================================
+#  Options
+# ======================================
+
+  setopt NO_CASE_GLOB
+  setopt NO_BEEP
+
+  setopt PROMPT_SUBST
+
+# History ------------------------------
+  setopt HIST_VERIFY
+  setopt INC_APPEND_HISTORY
+  setopt SHARE_HISTORY
+  setopt HIST_REDUCE_BLANKS
+  setopt HIST_IGNORE_ALL_DUPS
+
+# Directory ----------------------------
+  setopt AUTO_CD
+  setopt AUTO_PUSHD        # 'cd' command act like 'pushd'
+  setopt PUSHD_MINUS       # change directory in stack
+  setopt PUSHD_SILENT      # don't print the directory stack after pushd or popd
+  setopt PUSHD_IGNORE_DUPS # ignore duplicate in stack
+
+# ======================================
+#  Auto Completion
+# ======================================
+
+  # autoload -Uz compinit && compinit
+  autoload -U compinit
+  zstyle ':completion:*' menu select
+
+  # Partial completion suggestions
+  zstyle ':completion:*' list-suffixes
+  zstyle ':completion:*' expand prefix suffix
+
+  # Case insensitive path-completion
+  zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+  # Hidden file
+  zmodload zsh/complist
+  compinit
+  _comp_options+=(globdots)
+
+# ======================================
+#  Funtions
+# ======================================
+
+ # Git Integration ---------------------
+   autoload -Uz vcs_info
+   zstyle ':vcs_info:*' enable git
+   zstyle ':vcs_info:git:*' formats '%F{130}[%b] %f'
+   precmd_vcs_info() { vcs_info }
+   precmd_functions+=( precmd_vcs_info )
+   #zstyle ':vcs_info:git:*' formats '%F{240}« %b | %r »%f'
+
+# ======================================
+#  Source
+# ======================================
+
+# Prompt -------------------------------
+  source "$ZDOTDIR/plugins/prompt.zsh"
+
+# Alias --------------------------------
+  source "$ZDOTDIR/plugins/aliases.zsh"
+
+# Syntax Highlighting ------------------
+  source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
