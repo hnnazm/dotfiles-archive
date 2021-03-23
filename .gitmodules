@@ -1,0 +1,24 @@
+[submodule "nvim/pack/bundle/start/coc.nvim"]
+	path = nvim/pack/bundle/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "nvim/pack/bundle/start/vim-polyglot"]
+	path = nvim/pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "nvim/pack/bundle/opt/vim-startify"]
+	path = nvim/pack/bundle/opt/vim-startify
+	url = https://github.com/mhinz/vim-startify.git
+[submodule "nvim/pack/bundle/opt/goyo.vim"]
+	path = nvim/pack/bundle/opt/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "nvim/pack/bundle/opt/vim-sandwich"]
+	path = nvim/pack/bundle/opt/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich.git
+[submodule "nvim/pack/bundle/opt/vim-floaterm"]
+	path = nvim/pack/bundle/opt/vim-floaterm
+	url = https://github.com/voldikss/vim-floaterm.git
+[submodule "nvim/pack/bundle/opt/vim-easy-align"]
+	path = nvim/pack/bundle/opt/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "nvim/pack/bundle/opt/vim-snippets"]
+	path = nvim/pack/bundle/opt/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
