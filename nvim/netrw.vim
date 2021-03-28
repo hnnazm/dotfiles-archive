@@ -33,9 +33,9 @@
       else
          let g:NetrwIsOpen=1
          try
-            silent Lexplore %:h
+            silent Lexplore! %:h
          catch 'E499'
-             silent Lexplore
+             silent Lexplore!
          endtry
       endif
   endfunction
