@@ -72,5 +72,8 @@
 # Alias --------------------------------
   source "$ZDOTDIR/plugins/aliases.zsh"
 
+# VI mode ------------------------------
+  source "$ZDOTDIR/plugins/vimode.zsh"
+
 # Syntax Highlighting ------------------
   source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
