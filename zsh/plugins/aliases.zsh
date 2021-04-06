@@ -50,20 +50,14 @@
 
  # macOS -----------------------------------------
 
-  alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
-  alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
-  alias fx="open -a /Applications/Firefox.app"
+   alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+   alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 
  # Docker ----------------------------------------
 
- alias nv='docker run --rm -it\
+   alias nv='docker run --rm -it\
     --mount type=bind,source=/Users/nan/,target=/root nvim'
  
- # Ranger (File Manager) -------------------------
-
-   # Change directory within ranger
-   alias m='. ranger'
-
  # Curl ------------------------------------------
  
    alias wttr='curl wttr.in'
