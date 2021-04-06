@@ -21,6 +21,7 @@
   export HISTCONTROL=ignoreboth
   export HISTSIZE=10000                   # Maximum events for internal history
   export SAVEHIST=10000                   # Maximum events in history file
+  export KEYTIMEOUT=1
 
 # PATH ---------------------------------
   export PATH="/usr/local/bin:usr/local/sbin:$PATH"   # Homebrew
