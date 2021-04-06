@@ -31,8 +31,7 @@
    alias ...='cd ../../'
 
    # frequent directory
-   hash -d editor='/Users/nan/editor'
-   alias editor='~editor'
+   hash -d dotfile="$XDG_CONFIG_HOME"
 
 
  # Remove ----------------------------------------
