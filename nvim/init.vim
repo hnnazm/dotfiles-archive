@@ -111,6 +111,7 @@
            \ 'netrw.vim',
            \ 'utils.vim',
            \ 'plugins.vim',
+           \ 'nvim-treesitter.lua',
            \ ]
 
   for f in g:config_file_list
