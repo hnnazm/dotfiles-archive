@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cdtemp() {
+  name="$1"
+  mkdir -p "/tmp/$name"
+  cd "/tmp/$name"
+}

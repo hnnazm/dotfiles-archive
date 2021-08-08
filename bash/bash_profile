@@ -1,0 +1,46 @@
+# Terminal ---------------------------------------
+export TERM=xterm-256color
+
+# XDG --------------------------------------------
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
+export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+
+# Editor ------------------------------------------
+export EDITOR="vim"
+export VISUAL="vim"
+
+# Pager -------------------------------------------
+export PAGER=less
+
+# bash --------------------------------------------
+export BASHDOTDIR="$XDG_CONFIG_HOME/bash"
+export HISTCONTROL=ignoreboth
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+export KEYTIMEOUT=1
+
+source $BASHDOTDIR/bashrc
+
+# export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
+# cdpath ------------------------------------------
+export CDPATH=.:\
+~/devspace:\
+~/.config:\
+~
+
+# Rust --------------------------------------------
+export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
+
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
