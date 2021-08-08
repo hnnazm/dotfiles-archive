@@ -1,0 +1,108 @@
+"
+"   ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+"   ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+"   ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+"   ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+"   ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+"   ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+"                                                      config-file
+
+" ===============================================
+"  General Setting
+" ===============================================
+
+  scriptencoding utf-16        " allow emojis in vimrc
+  set nocompatible             " vim, not vi
+  syntax on                    " syntax highlighting
+  filetype plugin indent on    " try to recognize filetypes and load rel' plugins
+  set shell=$SHELL\ -l         " Set the shell
+
+" Behavior Modification –––––––––––––––––––––––––
+
+" Leader Key
+  let g:mapleader=" "
+  let g:maplocalleader="\\"
+
+  set backspace=2       " Backspace deletes like most programs in insert mode
+  set history=200       " how many : commands to save in history
+  set autowrite         " Automatically :write before running commands
+  set smartcase         " use case sensitive if capital letter present or \C
+  set magic             " Use 'magic' patterns (extended regular expressions).
+  set confirm
+  set guioptions=       " remove scrollbars on macvim
+  set noshowmode        " don't show mode as airline already does
+  set showtabline=2
+  set laststatus=2
+  set showcmd           " show any commands
+  set tabstop=2         " Softtabs or die! use 2 spaces for tabs.
+  set shiftwidth=2      " Number of spaces to use for each step of (auto)indent.
+  set expandtab         " insert tab with right amount of spacing
+  set softtabstop=2
+  set shiftround        " Round indent to multiple of 'shiftwidth'
+  set hidden            " enable hidden unsaved buffers
+  set autochdir         " change directory automatically based on file opened
+  set nowrapscan        " disable wrap scan at the end of search
+  set completeopt=menuone,noselect
+  set wildmenu
+  set wildmode=longest,full
+
+"  Text appearances ––––––––––––––––––––––––––––––
+
+   set textwidth=80
+   set noruler
+   set nolist                          " show invisible characters
+   set listchars=tab:»·,trail:-,nbsp:·,eol:$,space:· 
+
+"  Tabs and buffers ––––––––––––––––––––––––––––––
+
+   set switchbuf=useopen
+
+"  Open new split panes to right and bottom, which feels more natural
+   set splitbelow
+   set splitright
+
+"  UI Customization ––––––––––––––––––––––––––––––
+
+"  Set background
+   set background=light
+
+"  Highlight column after 'textwidth'
+   set cc=+1
+"  highlight ColorColumn ctermbg=236 guibg=#303030
+"  let &colorcolumn=join(range(100,999),',')
+
+"  hide vertical split
+   hi VertSplit guifg=fg guibg=bg
+   set fillchars=vert:\ 
+      hi! VertSplit guifg=black guibg=black ctermfg=black ctermbg=black
+
+"  cursor
+  let &t_SI = "\e[5 q"
+  let &t_EI = "\e[2 q"
+
+  augroup switchCursor
+    au!  
+    autocmd VimEnter * silent !echo -ne "\e[2 q" 
+  augroup END
+
+  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,sm:block-blinkwait175-blinkoff150-blinkon175
+
+  set ttimeout
+  set ttimeoutlen=1
+
+
+" ===============================================
+"  Source File
+" ===============================================
+
+  let config_file_list = [
+    \ 'mappings.vim',
+    \ 'netrw.vim',
+    \ 'plugins.vim'
+    \ ]
+
+  for f in config_file_list
+    execute 'source '. $XDG_CONFIG_HOME . '/vim/' . f
+  endfor
