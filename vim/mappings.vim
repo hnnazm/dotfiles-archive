@@ -30,6 +30,9 @@
    nnoremap <silent> gb :bnext<CR>
    nnoremap <silent> gB :bprevious<CR>
 
+" Switch to alternate buffer
+   nnoremap <Tab> <C-^>
+
 "  Arrow Keys ––––––––––––––––––––––––––––––––––––
 
 "  Disable arrow keys
@@ -89,6 +92,9 @@
 
 "  Show tab, end-of-line, and trailing whitespace
    nnoremap <Bslash>l :<C-U>setlocal list!<CR>
+
+"  Highlight search
+   noremap <space>h :set hlsearch! hlsearch?<cr>
 
 "  Search Word –––––––––––––––––––––––––––––––––––
 

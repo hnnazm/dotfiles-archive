@@ -12,6 +12,7 @@
     let g:netrw_liststyle = 0               " wide list view
     "let g:netrw_chgwin = 2
     let g:netrw_keepdir= 1
+    let g:netrw_dirhistmax = 0
     let g:netrw_browsex_viewer = "open"     " open with special
     let g:netrw_sort_by = "exten"
     let g:netrw_sort_direction = "reverse"
