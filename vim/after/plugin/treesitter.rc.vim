@@ -12,6 +12,7 @@ require'nvim-treesitter.configs'.setup {
     "css",
     "javascript",
     "typescript",
+    "python",
     "vue",
   },
   ignore_install = {},

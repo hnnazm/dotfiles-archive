@@ -87,4 +87,9 @@ nvim_lsp.html.setup{
 nvim_lsp.cssls.setup{
   on_attach = on_attach,
 }
+
+-- pip install jedi-language-server
+nvim_lsp.jedi_language_server.setup{
+  on_attach = on_attach,
+}
 EOF
