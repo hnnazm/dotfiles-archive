@@ -60,7 +60,7 @@ local on_attach = function(client, bufnr)
   }
 end
 
-
+-- npm install -g typescript typescript-language-server
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = {
@@ -73,14 +73,17 @@ nvim_lsp.tsserver.setup {
   }
 }
 
+-- apt install build-essentials ccls
 nvim_lsp.ccls.setup {
   on_attach = on_attach
 }
 
+-- npm i -g vscode-langservers-extracted
 nvim_lsp.html.setup{
   on_attach = on_attach,
 }
 
+-- npm i -g vscode-langservers-extracted
 nvim_lsp.cssls.setup{
   on_attach = on_attach,
 }
