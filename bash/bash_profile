@@ -16,6 +16,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 
+# PATH --------------------------------------------
+export PATH=$PATH:\
+~/.local/bin
+
 # Editor ------------------------------------------
 export EDITOR="vim"
 export VISUAL="vim"

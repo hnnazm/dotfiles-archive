@@ -33,6 +33,9 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+-- apt install build-essentials ccls rust-analyzer
+-- pip install jedi-language-server
+-- npm i -g vscode-langservers-extracted tsserver
 local servers = { 'tsserver', 'ccls', 'html', 'cssls', 'rust_analyzer' }
 
 for _, lsp in ipairs(servers) do
@@ -97,5 +100,4 @@ cmp.setup {
         { name = 'nvim_lsp' },
     }),
 }
-
 EOF
