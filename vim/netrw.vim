@@ -5,13 +5,13 @@
 
     let g:netrw_banner = 0                  " disable annoying banner
     let g:netrw_winsize = 50                " window size
-    let g:netrw_usetab = 1                  " required for netrw_wiw
     let g:netrw_wiw = 30                    " set alternate window size
+    let g:netrw_usetab = 1                  " required for netrw_wiw
     let g:netrw_browse_split = 0            " open in prior tab
     let g:netrw_altv = 1                    " open splits to the right
     let g:netrw_liststyle = 0               " wide list view
     "let g:netrw_chgwin = 2
-    let g:netrw_keepdir= 1
+    let g:netrw_keepdir= 0
     let g:netrw_dirhistmax = 0
     let g:netrw_browsex_viewer = "open"     " open with special
     let g:netrw_sort_by = "exten"
@@ -95,5 +95,7 @@
       "autocmd BufLeave netrw call ClearNetrw()
 
 "   Keymap
-    noremap <silent> <Leader><Leader> :call ToggleNetrw(1)<CR>
-    noremap <silent> <Bslash><Bslash> :call ToggleNetrw(0)<CR>
+    " noremap <silent> <Leader><Leader> :call ToggleNetrw(1)<CR>
+    " noremap <silent> <Bslash><Bslash> :call ToggleNetrw(0)<CR>
+    noremap <silent> <Leader><Leader> :Lexplore!<CR>
+    nmap <Bslash><Bslash> <Plug>NetrwShrink

@@ -30,7 +30,7 @@
    nnoremap <silent> gb :bnext<CR>
    nnoremap <silent> gB :bprevious<CR>
 
-" Switch to alternate buffer
+"  Switch to alternate buffer
    nnoremap <Tab> <C-^>
 
 "  Arrow Keys ––––––––––––––––––––––––––––––––––––
@@ -65,20 +65,20 @@
 
 "  Windows navigation ––––––––––––––––––––––––––––
 
-    tnoremap <M-h> <C-\><C-N><C-w>h
-    tnoremap <M-j> <C-\><C-N><C-w>j
-    tnoremap <M-k> <C-\><C-N><C-w>k
-    tnoremap <M-l> <C-\><C-N><C-w>l
-    inoremap <M-h> <C-\><C-N><C-w>h
-    inoremap <M-j> <C-\><C-N><C-w>j
-    inoremap <M-k> <C-\><C-N><C-w>k
-    inoremap <M-l> <C-\><C-N><C-w>l
-    inoremap <M-o> <C-\><C-N><C-w>o
-    nnoremap <M-h> <C-w>h
-    nnoremap <M-j> <C-w>j
-    nnoremap <M-k> <C-w>k
-    nnoremap <M-l> <C-w>l
-    nnoremap <M-o> <C-w>o
+   tnoremap <M-h> <C-\><C-N><C-w>h
+   tnoremap <M-j> <C-\><C-N><C-w>j
+   tnoremap <M-k> <C-\><C-N><C-w>k
+   tnoremap <M-l> <C-\><C-N><C-w>l
+   inoremap <M-h> <C-\><C-N><C-w>h
+   inoremap <M-j> <C-\><C-N><C-w>j
+   inoremap <M-k> <C-\><C-N><C-w>k
+   inoremap <M-l> <C-\><C-N><C-w>l
+"  inoremap <M-o> <C-\><C-N><C-w>o
+   nnoremap <M-h> <C-w>h
+   nnoremap <M-j> <C-w>j
+   nnoremap <M-k> <C-w>k
+   nnoremap <M-l> <C-w>l
+   nnoremap <M-o> <C-w>o
 
 "  Toggle ––––––––––––––––––––––––––––––––––––––––
 
@@ -104,8 +104,8 @@
 "  Replacing Word ––––––––––––––––––––––––––––––––
 
 "  Replace word under cursor, globally, with confirmation
-   nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
-   vnoremap <Leader>s y :%s/<C-r>"//gc<Left><Left><Left>
+   nnoremap <Leader>r :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+   vnoremap <Leader>r y :%s/<C-r>"//gc<Left><Left><Left>
 
 "  VimGrep –––––––––––––––––––––––––––––––––––––––
 

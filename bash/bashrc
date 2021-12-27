@@ -1,20 +1,37 @@
-test -e /etc/bashrc && source /etc/bashrc
+#
+#   ██████╗  █████╗ ███████╗██╗  ██╗
+#   ██╔══██╗██╔══██╗██╔════╝██║  ██║
+#   ██████╔╝███████║███████╗███████║
+#   ██╔══██╗██╔══██║╚════██║██╔══██║
+#   ██████╔╝██║  ██║███████║██║  ██║
+#   ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+#                                     config-file
 
-case $- in
-  *i*);;  # interactive
-  *)return ;;
-esac
+# ===============================================
+#  General Setting
+# ===============================================
 
-# Vi mode
-set -o vi
+  test -e /etc/bashrc && source /etc/bashrc
 
-# Shell Options
-shopt -s checkwinsize
-shopt -s histappend
+  case $- in
+    *i*);;  # interactive
+    *)return ;;
+  esac
 
-# Plugins
-if [ -d $BASHDOTDIR/scripts ]; then
-  for file in $BASHDOTDIR/scripts/*; do
-    source "$file"
-  done
-fi
+  # Vi mode
+  set -o vi
+
+  # Shell Options
+  shopt -s checkwinsize
+  shopt -s histappend
+
+
+# ===============================================
+# External Scripts
+# ===============================================
+
+  if [ -d $BASHDOTDIR/scripts ]; then
+    for file in $BASHDOTDIR/scripts/*; do
+      source "$file"
+    done
+  fi

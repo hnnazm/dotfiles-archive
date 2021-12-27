@@ -2,57 +2,56 @@
 #  Alias
 # ================================================
 
- # List Directory (ls) ---------------------------
+# ls ––––––––––––––––––––––––––––––––––––––––––––
 
-   alias ls='ls --color=auto'
-   alias la='ls -lA'
-   alias lsh='ls -ld .*'    # hidden file
+  alias ls='ls -G'
+  alias la='ls -lA'
+  alias lsh='ls -ld .*'    # hidden file
 
- # Push/Pop Directory ----------------------------
+# push/pop ––––––––––––––––––––––––––––––––––––––
 
-   alias pu=pushd
-   alias po=popd
-   alias d='dirs -v'
+  alias pu=pushd
+  alias po=popd
+  alias d='dirs -v'
 
- # Grep ------------------------------------------
+# grep ––––––––––––––––––––––––––––––––––––––––––
+
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 
- # Create Directory ------------------------------
+# mkdir –––––––––––––––––––––––––––––––––––––––––
 
-   alias mkdir='mkdir -pv'
+  alias mkdir='mkdir -pv'
 
- # Change Directory ------------------------------
- 
-   alias ..='cd ..'
-   alias ...='cd ../../'
+# cd ––––––––––––––––––––––––––––––––––––––––––––
 
-   # frequent directory
-   hash -d dotfile="$XDG_CONFIG_HOME"
+  alias ..='cd ..'
+  alias ...='cd ../../'
 
+  hash -d dotfile="$XDG_CONFIG_HOME"    # frequent directory
 
- # Remove ----------------------------------------
+# rm ––––––––––––––––––––––––––––––––––––––––––––
 
-   # alias rm='rm -i'
+  alias rm='rm -i'
 
- # History ---------------------------------------
+# history –––––––––––––––––––––––––––––––––––––––
 
-   alias h='history'
+  alias h='history'
 
- # Nvim ------------------------------------------
- 
-   # alias vim='nvim'
-   # alias lv='nvim -c Ex'
-   # alias goyo='nvim -c Goyo'
+# neovim ––––––––––––––––––––––––––––––––––––––––
 
- # macOS -----------------------------------------
+  alias vim='nvim'
+# alias lv='nvim -c Ex'
+# alias goyo='nvim -c Goyo'
+
+# macOS –––––––––––––––––––––––––––––––––––––––––
 
   alias hidefiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
   alias showfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias fx="open -a /Applications/Firefox.app"
 
- # Curl ------------------------------------------
- 
-   alias wttr='curl wttr.in'
-   alias cheat='curl cheat.sh'
+# curl ––––––––––––––––––––––––––––––––––––––––––
+
+  alias wttr='curl wttr.in'
+  alias cheat='curl cheat.sh'

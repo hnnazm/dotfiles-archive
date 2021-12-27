@@ -1,3 +1,7 @@
+if !PlugLoaded("nvim-treesitter")
+  finish
+endif
+
 if !exists('g:loaded_nvim_treesitter')
   finish
 endif
