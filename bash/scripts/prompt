@@ -1,8 +1,10 @@
+#!/usr/bin/env bash
+
 # ================================================
 #  Prompt
 # ================================================
 
-source $BASHDOTDIR/scripts/git-prompt.sh
+source $BASHDOTDIR/scripts/git-prompt
 
 PS1_ERROR() {
   local e=$?

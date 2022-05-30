@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Language runtime and compiler
+function init_go() {
+  docker run \
+    --rm \
+    -v "$PWD":/usr/src/myapp \
+    -w /usr/src/myapp \
+    -e GOARCH=amd64 \
+    -e GOOS=linux \
+    golang:latest \
+    go mod init $@
+}
+alias gi=init_go
+
+function compile_go() {
+  local filename=$1
+
+  docker run \
+    --rm \
+    -v "$PWD":/usr/src/myapp \
+    -w /usr/src/myapp \
+    -e GOARCH=amd64 \
+    -e GOOS=linux \
+    golang:latest \
+    /bin/bash -c "go get . && go build -v -o ${filename:-''} -ldflags='-s -w'"
+}
+alias gc=compile_go

@@ -21,8 +21,8 @@ export PATH=$PATH:\
 ~/.local/bin
 
 # Editor ------------------------------------------
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Pager -------------------------------------------
 export PAGER=less
@@ -55,22 +55,20 @@ if type brew &>/dev/null; then
 fi
 
 # Rust --------------------------------------------
-export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
-export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
+# export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+# export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 
 # fzf ---------------------------------------------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-fi
-
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
-
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+# if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+#   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+# fi
+# 
+# [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+# 
+# source "/usr/local/opt/fzf/shell/key-bindings.bash"
 
 # bottom ------------------------------------------
-[[ $- == *i* ]] && source "/usr/local/etc/bash_completion.d/rg.bash" 2> /dev/null
+# [[ $- == *i* ]] && source "/usr/local/etc/bash_completion.d/rg.bash" 2> /dev/null
 
 # bat ---------------------------------------------
 
-# bottom ------------------------------------------
-[[ $- == *i* ]] && source "/usr/local/etc/bash_completion.d/btm.bash" 2> /dev/null
