@@ -76,3 +76,13 @@ btm() {
 			${DOCKER_REPO_PREFIX}/bottom
 	fi
 }
+
+nvim() {
+  if [[ -n "$(which nvim)" ]]; then
+      "$(which nvim)" "$@"
+    else
+    docker run --rm -it \
+      -v "$(pwd)":/devspace \
+      ${DOCKER_REPO_PREFIX}/nvim
+  fi
+}

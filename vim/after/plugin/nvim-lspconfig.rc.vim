@@ -42,7 +42,8 @@ local servers = {
   'html',
   'cssls',
   'rust_analyzer',
-  'jedi_language_server'
+  'jedi_language_server',
+  'gopls',
 }
 
 for _, lsp in ipairs(servers) do
