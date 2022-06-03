@@ -51,6 +51,7 @@ if has('nvim')
 
 " Extras
   Plug 'onsails/lspkind-nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 endif
 
 call plug#end()
