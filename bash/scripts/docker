@@ -1,5 +1,43 @@
 #!/usr/bin/env bash
 
+export DOCKER_REPO_PREFIX=nan
+
+# Helper functions
+
+dcleanup() {
+  # Remove dangling containers, images, and volumes
+
+	local containers
+	mapfile -t containers < <(docker ps -aq 2>/dev/null)
+	docker rm "${containers[@]}" 2>/dev/null
+  
+	local volumes
+	mapfile -t volumes < <(docker ps --filter status=exited -q 2>/dev/null)
+	docker rm -v "${volumes[@]}" 2>/dev/null
+
+	local images
+	mapfile -t images < <(docker images --filter dangling=true -q 2>/dev/null)
+	docker rmi "${images[@]}" 2>/dev/null
+}
+
+del_stopped() {
+  # Stop docker container
+	local name=$1
+	local state
+
+	state=$(docker inspect --format "{{.State.Running}}" "$name" 2>/dev/null)
+
+	if [[ "$state" == "false" ]]; then
+		docker rm "$name"
+	fi
+}
+
+rmctr() {
+  # Remove container
+	# shellcheck disable=SC2068
+	docker rm -f $@ 2>/dev/null || true
+}
+
 # Language runtime and compiler
 function init_go() {
   docker run \
@@ -26,3 +64,15 @@ function compile_go() {
     /bin/bash -c "go get . && go build -v -o ${filename:-''} -ldflags='-s -w'"
 }
 alias gc=compile_go
+
+btm() {
+	if [[ -n "$(which btm)" ]]; then
+		"$(which btm)" "$@"
+	else
+		docker run --rm -it \
+			--pid host \
+			--net none \
+			--name htop \
+			${DOCKER_REPO_PREFIX}/bottom
+	fi
+}
