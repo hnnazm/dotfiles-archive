@@ -86,3 +86,26 @@ nvim() {
       ${DOCKER_REPO_PREFIX}/nvim
   fi
 }
+
+http() {
+  if [[ -n "$(which http)" ]]; then
+      "$(which http)" "$@"
+    else
+    docker run -ti --rm \
+      -v ~/.httpie:/root/.httpie \
+      ${DOCKER_REPO_PREFIX}/httpie \
+      $@
+  fi
+}
+
+https() {
+  if [[ -n "$(which https)" ]]; then
+      "$(which https)" "$@"
+    else
+    docker run -ti --rm \
+      -v ~/.httpie:/root/.httpie \
+      --entrypoint=https \
+      ${DOCKER_REPO_PREFIX}/httpie \
+      $@
+  fi
+}
