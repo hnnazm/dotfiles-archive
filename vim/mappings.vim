@@ -18,8 +18,10 @@
 
 "  Tabs ––––––––––––––––––––––––––––––––––––––––––
 
-   nnoremap <silent> <pageDown> :tabnext<CR>
-   nnoremap <silent> <pageUp> :tabprev<CR>
+   " nnoremap <silent> <pageDown> :tabnext<CR>
+   " nnoremap <silent> <pageUp> :tabprev<CR>
+   nnoremap <silent> <C-h> :tabprev<CR>
+   nnoremap <silent> <C-l> :tabnext<CR>
 
 "  Buffers –––––––––––––––––––––––––––––––––––––––
 
@@ -27,8 +29,11 @@
    nnoremap <silent> <C-x> :bp\|bd #<CR>
 
 "  Go to next and previous buffer
-   nnoremap <silent> gb :bnext<CR>
-   nnoremap <silent> gB :bprevious<CR>
+   " nnoremap <silent> gb :bnext<CR>
+   " nnoremap <silent> gB :bprevious<CR>
+   nnoremap <silent> <C-k> :bprevious<CR>
+   nnoremap <silent> <C-j> :bnext<CR>
+   nnoremap <leader>bb :ls<CR>:buffer<Space>
 
 "  Switch to alternate buffer
    nnoremap <Tab> <C-^>
