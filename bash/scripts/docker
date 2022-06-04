@@ -39,10 +39,10 @@ rmctr() {
 }
 
 # Language runtime and compiler
-function init_go() {
+init_go() {
   docker run \
     --rm \
-    -v "$PWD":/usr/src/myapp \
+    -v "$(pwd)":/usr/src/myapp \
     -w /usr/src/myapp \
     -e GOARCH=amd64 \
     -e GOOS=linux \
@@ -51,12 +51,12 @@ function init_go() {
 }
 alias gi=init_go
 
-function compile_go() {
+compile_go() {
   local filename=$1
 
   docker run \
     --rm \
-    -v "$PWD":/usr/src/myapp \
+    -v "$(pwd)":/usr/src/myapp \
     -w /usr/src/myapp \
     -e GOARCH=amd64 \
     -e GOOS=linux \
@@ -109,3 +109,37 @@ https() {
       $@
   fi
 }
+
+init_rust() {
+  docker run \
+    --rm \
+    -v "$(pwd)":/devspace \
+    -w /devspace \
+    rust:latest \
+    cargo init $@
+}
+alias ri=init_rust
+
+run_rust() {
+  local filename=$1
+
+  docker run \
+    --rm \
+    -v "$(pwd)":/devspace \
+    -w /devspace \
+    rust:latest \
+    /bin/bash -c "cargo run"
+}
+alias rr=run_rust
+
+test_rust() {
+  local filename=$1
+
+  docker run \
+    --rm \
+    -v "$(pwd)":/devspace \
+    -w /devspace \
+    rust:latest \
+    /bin/bash -c "cargo test $@"
+}
+alias tr=test_rust
